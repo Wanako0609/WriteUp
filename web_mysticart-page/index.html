@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>MystiCart</title>
+  <meta author="Xclow3n" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <style>
+    /* Additional styles for alignment */
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+
+    .search-heading {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+  <script>
+    // JavaScript function to handle search redirect
+    function handleSearch(event) {
+      event.preventDefault(); // Prevent the form from submitting traditionally
+      var searchText = document.getElementById('searchInput').value; // Get the search text
+      window.location.href = '/?search=' + encodeURIComponent(searchText); // Redirect to the search URL
+    }
+
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-logo">
+        <h1 class="logo">MystiCart</h1>
+      </div>
+      
+      <nav class="header-navigation">
+        <a href="#">About</a>
+        <a href="#" class="link-button">Your Cart<i class="material-icons-outlined">shopping_cart</i></a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="responsive-container">
+      <div class="search-bar">
+        <form onsubmit="handleSearch(event)">
+          <input type="text" id="searchInput" placeholder="Search products..." required>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <!-- Placeholder for the search heading -->
+      <h2 id="searchHeading" class="search-heading"></h2>
+      <div class="grid">
+
+        
+        <a class="product" href="/product/1">
+          <div class="product-image">
+            <img src="/static/images/arcane_tomb.webp" />
+          </div>
+          <div class="product-content">
+            <div class="product-info">
+              <h2 class="product-title">Arcane Tomb</h2>
+              <p class="product-price">$ $10</p>
+            </div>
+            <button class="product-action">
+              <i class="material-icons-outlined">favorite_border</i>
+            </button>
+          </div>
+        </a>
+        
+        <a class="product" href="/product/2">
+          <div class="product-image">
+            <img src="/static/images/cloak.webp" />
+          </div>
+          <div class="product-content">
+            <div class="product-info">
+              <h2 class="product-title">Boundless Cloak</h2>
+              <p class="product-price">$ $9</p>
+            </div>
+            <button class="product-action">
+              <i class="material-icons-outlined">favorite_border</i>
+            </button>
+          </div>
+        </a>
+        
+        <a class="product" href="/product/3">
+          <div class="product-image">
+            <img src="/static/images/divine_jewel.webp" />
+          </div>
+          <div class="product-content">
+            <div class="product-info">
+              <h2 class="product-title">Divine Jewel</h2>
+              <p class="product-price">$ $9</p>
+            </div>
+            <button class="product-action">
+              <i class="material-icons-outlined">favorite_border</i>
+            </button>
+          </div>
+        </a>
+        
+        <a class="product" href="/product/4">
+          <div class="product-image">
+            <img src="/static/images/dragon.webp" />
+          </div>
+          <div class="product-content">
+            <div class="product-info">
+              <h2 class="product-title">Dragon</h2>
+              <p class="product-price">$ $9</p>
+            </div>
+            <button class="product-action">
+              <i class="material-icons-outlined">favorite_border</i>
+            </button>
+          </div>
+        </a>
+        
+        <a class="product" href="/product/5">
+          <div class="product-image">
+            <img src="/static/images/eternal_potion.webp" />
+          </div>
+          <div class="product-content">
+            <div class="product-info">
+              <h2 class="product-title">Eternal Potion</h2>
+              <p class="product-price">$ $12</p>
+            </div>
+            <button class="product-action">
+              <i class="material-icons-outlined">favorite_border</i>
+            </button>
+          </div>
+        </a>
+        
+        <a class="product" href="/product/6">
+          <div class="product-image">
+            <img src="/static/images/holy_compass.webp" />
+          </div>
+          <div class="product-content">
+            <div class="product-info">
+              <h2 class="product-title">Holy Compass</h2>
+              <p class="product-price">$ $5</p>
+            </div>
+            <button class="product-action">
+              <i class="material-icons-outlined">favorite_border</i>
+            </button>
+          </div>
+        </a>
+        
+        <a class="product" href="/product/7">
+          <div class="product-image">
+            <img src="/static/images/Majestic_Wand.webp" />
+          </div>
+          <div class="product-content">
+            <div class="product-info">
+              <h2 class="product-title">Majestic Wand</h2>
+              <p class="product-price">$ $15</p>
+            </div>
+            <button class="product-action">
+              <i class="material-icons-outlined">favorite_border</i>
+            </button>
+          </div>
+        </a>
+        
+        <a class="product" href="/product/8">
+          <div class="product-image">
+            <img src="/static/images/divin_sword.webp" />
+          </div>
+          <div class="product-content">
+            <div class="product-info">
+              <h2 class="product-title">Divine Sword</h2>
+              <p class="product-price">$ $5</p>
+            </div>
+            <button class="product-action">
+              <i class="material-icons-outlined">favorite_border</i>
+            </button>
+          </div>
+        </a>
+        
+
+      </div>
+    </div>
+  </main>
+  <!-- partial -->
+</body>
+
+</html>

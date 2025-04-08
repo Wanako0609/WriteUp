@@ -1,0 +1,61 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>MystiCart</title>
+  <meta author="Xclow3n">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <style>
+    /* Additional styles for alignment */
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+
+    .search-heading {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+  <script>
+    // JavaScript function to handle search redirect
+    function handleSearch(event) {
+      event.preventDefault(); // Prevent the form from submitting traditionally
+      var searchText = document.getElementById('searchInput').value; // Get the search text
+      window.location.href = '/?search=' + encodeURIComponent(searchText); // Redirect to the search URL
+    }
+
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-logo">
+        <h1 class="logo">MystiCart</h1>
+      </div>
+      
+      <nav class="header-navigation">
+        <a href="#">About</a>
+        <a href="#" class="link-button">Your Cart<i class="material-icons-outlined">shopping_cart</i></a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="responsive-container">
+      <div class="search-bar">
+        <form onsubmit="handleSearch(event)">
+          <input type="text" id="searchInput" placeholder="Search products..." required="">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <!-- Placeholder for the search heading -->
+      <h2 id="searchHeading" class="search-heading"><script>console.log(btoa(document.documentElement.outerHTML));</script></h2></div></main></body></html>
