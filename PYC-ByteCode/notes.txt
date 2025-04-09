@@ -1,0 +1,16 @@
+J'utilise le script pour recuperer le controle continue
+bureau/cyber/app/pycdc/build » ./pycdc ~/Téléchargements/ch19.pyc
+
+le programme 
+for char in PASS:
+    KEYOUT.append((ord(char) + I ^ ord(KEY[I])) % 255)
+    I = (I + 1) % len(KEY)
+
+il commence par ((ord(char) + I) ^ ord(KEY[I]) )
+convertir en ord un charactere puis ajoute I
+puis il xor ça avec un clé
+
+Pour resoudre il faut
+xor un caractere avec un element de la clé pour recuperer X 
+puis on enleve le I
+    

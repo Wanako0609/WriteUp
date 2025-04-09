@@ -1,0 +1,14 @@
+On voit que sVar3 = read(0,local_148,0xff);
+On lit 0xff (le nombre) valeur de l'utilisateur
+donc local_148 doit etre de type char[0xff]
+
+maintenant on doit resoudre les operations donc on utilise Z3
+et on mets operation par operation
++
+une fonction pour verifier que ce soit des valeurs ascii
+for var in local_148:
+    solver.add(var >= 0, var <= 127)
+
+
+et au moment de la lecture on lit en char ascii
+result = ''.join(chr(model.evaluate(local_148[i]).as_long()) for i in range(128) if model.evaluate(local_148[i]).as_long() != 0)

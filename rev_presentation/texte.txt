@@ -1,0 +1,53 @@
+Je vais vous expliquer ce qu'est le reverse engineering simplement
+
+Le reverse engineering (ou retro ingenerie en français ) est l'activité qui consiste à analyse une programme pour en comprendre le fonctionnement.
+
+Alors pour bien comprendre je vais imager ce que l'on fait.
+
+Pour faire un gateau. On doit faire plusieurs choses
+Cuisinier -> programmeur
+Prendre les ingredients -> utiliser l'editeur de texte
+avec ça on va 
+appliquer une recette -> faire le code
+Puis on va cuir le gateau -> le compiler
+Une fois cuis on le mange -> soit on utilise le programme
+
+(Pour simplifier l'explication je m'attarderais pas sur les languages intépreter comme notre ami python)
+
+Le reverse c'est donc faire l'inverse
+depuis le gateau comprendre les ingredients et surtout la recette
+Comprendre comment a ete fait le programme et ce que il fait
+
+
+Je vais m'attarder un peu sur la compilation 
+Votre processeurs ne comprend pas directement les programmes donc on a besoin de les compiler.
+Voila un exemple simple 
+
+Alors oui ça peu faire peur, beaucoup de terme chelou
+je vais vous expliquer simplement comment fonctionne l'assembleur et on rentrera un peu plus dans le details tous a l'heure
+
+Alors chaque ligne correspond à une instruction dans le processeur
+Et les caracteres comme edi, rsp, rdi sont des registres de la memoire soit des espaces memoires qui vont etre utiliser pour les opérations
+donc le mov edi, offset.. va mettre le premier octets de .L0 dans le registre edi
+Puis apres le call puts vas appeler la fonction put
+
+l'arguement de put est dans le registre edi
+
+okay donc maintenant que on voit un peu mieux de quoi on parler on vas analyser le virus que l'on a refais pour l'exemple
+
+Nous avons percepter un envoi de donnée depuis un ordinateur infecter
+(1a3570263f2523703139703525703c3f233522)
+
+Nous allons donc rechercher dans le virus comment dechiffrer cette chaine puis à qui envoie t'il
+
+(
+    Du coup je commence par montrer les fonctions puis la fonction main
+    puis la fonction xor
+    puis l'assembleur de la fonction xor via ida
+    puis le code dessassembler 
+    puis la fonction python qui fais litteralement l'inverse
+    puis la recherche d'autre element comme le hash
+)
+
+
+https://reverse.zip/posts/introduction_au_reverse_partie_2/

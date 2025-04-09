@@ -1,0 +1,30 @@
+Alors pour commencer le fichier a un probleme d'encodage il n'est pas reconnu comme un fichier ELF
+J'utile Ghex pour modifier l'entete, je retire toute la partie inutile jusqu'au debut de l'entete ELF
+
+
+b *0x08048AEB
+r
+set $eip = 0x08048B2C #esquiver le ptrace
+b *0x08048BDE # break au test
+
+on remarque que notre comparaison change a chaque fois
+on va essayer d'esquiver les modifications qui se font via getpid, rand etc
+b *0x08048923 # break avant de recuperer le temps
+set $eip = 0x080489D8 # skip all util rand
+
+Apres ça c'est plu randomiser donc 
+password = 0_VQLGE_TQPTYD_KJTIV_
+
+
+les operation GDB operation dans l'ordre
+
+#Permet d'eviter la randomisation
+b *0x08048923 # break avant de recuperer le temps
+set $eip = 0x080489D8 # skip all util rand
+
+b *0x08048AEB # break avant le ptrace
+set $eip = 0x08048B2C #esquiver le ptrace
+
+b *0x08048BDE # break au test pour comparer
+
+
